@@ -488,56 +488,5 @@ h1{color:#fff;font-size:2.8rem;font-weight:800;margin-bottom:8px;letter-spacing:
   </div>
 </div>
 
-<script>
-// Matomo tracking
-
-
-// Traffic distribution to bridge pages
-function getBridgeUrl(){
-  var r=Math.random()*100;
-  if(r<40)     return "go/g"+(Math.floor(Math.random()*3)+1)+".html";
-  else if(r<65)return "go/fb"+(Math.floor(Math.random()*2)+1)+".html";
-  else if(r<85)return "go/tk"+(Math.floor(Math.random()*2)+1)+".html";
-  else          return "go/d"+(Math.floor(Math.random()*2)+1)+".html";
-}
-
-// CTA clicks -> bridge page with delay
-(function(){
-  var dl=450;
-  document.querySelectorAll(".cta-button").forEach(function(btn){
-    btn.addEventListener("click",function(e){
-      e.preventDefault();
-      var orig=btn.textContent;
-      btn.textContent="Loading...";
-      btn.style.opacity="0.7";
-      setTimeout(function(){
-        window.location.href=getBridgeUrl();
-      },dl);
-    });
-  });
-})();
-
-// FAQ Toggle
-function toggleFaq(el) {
-  el.parentElement.classList.toggle("active");
-}
-
-// Exit intent popup
-(function() {
-  var shown=false;
-  document.addEventListener("mouseleave",function(e){
-    if(e.clientY<5&&!shown){shown=true;document.getElementById("exit-popup").classList.add("show")}
-  });
-  var lastScroll=0;
-  document.addEventListener("scroll",function(){
-    var cur=window.scrollY;
-    if(cur<100&&lastScroll>300&&!shown){shown=true;document.getElementById("exit-popup").classList.add("show")}
-    lastScroll=cur;
-  });
-})();
-
-function closePopup(){document.getElementById("exit-popup").classList.remove("show")}
-document.addEventListener("keydown",function(e){if(e.key==="Escape")closePopup()});
-</script>
 </body>
 </html>
