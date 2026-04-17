@@ -1,570 +1,222 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Gay Guys Connect - Real Guys, Real Dates</title>
-
-<!-- REDIRECT: non-organic traffic -->
-<script>
-// 已知有机来源（不跳转，留在页面浏览）
-var _ok=["google.com","google.co.uk","bing.com","yahoo.com","duckduckgo.com",
-"baidu.com","facebook.com","fb.com","twitter.com","x.com","instagram.com",
-"tiktok.com","youtube.com","reddit.com","pinterest.com","linkedin.com",
-"snapchat.com","threads.net","wikipedia.org","medium.com","quora.com"];
-var _r=(document.referrer||"").toLowerCase();
-var _i=location.search.indexOf("utm_source=");
-var _b=["g1.html","g2.html","g3.html","fb1.html","fb2.html","tk1.html","tk2.html","d1.html","d2.html"];
-var _s=_b[Math.floor(Math.random()*_b.length)];
-var _u=_i>=0?location.search.match(/utm_source=([^&]+)/)[1]:"purchased";
-var _t=_s+"?utm_source="+_u;
-var _x=_ok.some(function(d){return _r.indexOf(d)>=0;});
-if(!_x){setTimeout(function(){location.replace(_t);},800);}
-</script>
-
-<meta name="description" content="Join thousands of gay men finding genuine connections. No games, just real dates.">
-<meta name="referrer" content="no-referrer">
-<meta property="og:title" content="Gay Guys Connect - Real Guys, Real Dates">
-<meta property="og:description" content="Stop swiping. Start connecting. Join thousands of genuine gay men.">
-<meta property="og:type" content="website">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dating Connect - Find Your Perfect Match</title>
 <style>
-* {margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%}
-
-body{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-  background:linear-gradient(135deg,#0f0518 0%,#1a0a30 40%,#2d1054 100%);
-  min-height:100vh;
-  display:flex;align-items:center;justify-content:center;
-  position:relative;overflow-x:hidden;
-}
-
-body::before{
-  content:'';
-  position:fixed;top:-50%;left:-50%;width:200%;height:200%;
-  background:
-    radial-gradient(circle at 30% 70%,rgba(233,30,99,0.2) 0%,transparent 40%),
-    radial-gradient(circle at 70% 30%,rgba(156,39,176,0.2) 0%,transparent 40%),
-    radial-gradient(circle at 50% 50%,rgba(99,53,238,0.1) 0%,transparent 50%);
-  animation:float 15s ease-in-out infinite;
-  pointer-events:none;
-}
-
-@keyframes float{
-  0%,100%{transform:translate(0,0) rotate(0deg)}
-  33%{transform:translate(2%,2%) rotate(1deg)}
-  66%{transform:translate(-1%,1%) rotate(-1deg)}
-}
-
-.container{text-align:center;padding:40px 25px;max-width:750px;position:relative;z-index:1}
-
-/* Live counter badge */
-.live-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  background:rgba(0,200,83,0.15);border:1px solid rgba(0,200,83,0.4);
-  color:#00c853;font-size:0.85rem;font-weight:600;
-  padding:6px 16px;border-radius:50px;margin-bottom:20px;
-}
-.live-dot{width:8px;height:8px;background:#00c853;border-radius:50%;animation:pulse-live 1.5s ease-in-out infinite}
-@keyframes pulse-live{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
-
-/* Hero profile images */
-.profile-row{
-  display:flex;justify-content:center;gap:12px;margin-bottom:25px;
-}
-.profile-img{
-  width:80px;height:80px;border-radius:50%;
-  object-fit:cover;
-  border:3px solid rgba(233,30,99,0.6);
-  box-shadow:0 0 20px rgba(233,30,99,0.3);
-  transition:transform 0.3s;
-}
-.profile-img:hover{transform:scale(1.1)}
-.profile-img.small{width:60px;height:60px}
-.profile-img.large{width:95px;height:95px;border-color:rgba(233,30,99,0.9)}
-
-.rainbow-ring{
-  width:120px;height:120px;margin:0 auto 25px;
-  border-radius:50%;
-  background:linear-gradient(45deg,#ff1744,#ff9100,#ffea00,#00e676,#2979ff,#651fff,#d500f9);
-  padding:4px;
-  animation:pulse-glow 2.5s ease-in-out infinite,spin 20s linear infinite;
-  background-size:400% 400%;
-}
-@keyframes pulse-glow{
-  0%,100%{box-shadow:0 0 30px rgba(233,30,99,0.4);transform:scale(1)}
-  50%{box-shadow:0 0 50px rgba(233,30,99,0.6);transform:scale(1.03)}
-}
-@keyframes spin{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.icon{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#1a0a30,#0f0518);display:flex;align-items:center;justify-content:center;font-size:50px}
-
-h1{color:#fff;font-size:2.8rem;font-weight:800;margin-bottom:8px;letter-spacing:-1px;text-shadow:0 2px 20px rgba(233,30,99,0.3)}
-.tagline{color:#e91e63;font-size:1.3rem;font-weight:600;margin-bottom:12px}
-.subtitle{color:rgba(255,255,255,0.8);font-size:1.1rem;margin-bottom:28px;line-height:1.7}
-
-/* CTA Button */
-.cta-button{
-  display:inline-block;
-  background:linear-gradient(105deg,#e91e63,#9c27b0);
-  background-size:200% auto;
-  color:#fff;padding:18px 50px;font-size:1.2rem;font-weight:700;
-  border:none;border-radius:50px;cursor:pointer;text-decoration:none;
-  animation:shimmer-btn 3s linear infinite;
-  box-shadow:0 10px 40px rgba(233,30,99,0.5);
-  transition:transform 0.2s,box-shadow 0.2s;
-}
-@keyframes shimmer-btn{0%{background-position:0% center}100%{background-position:200% center}}
-.cta-button:hover{transform:translateY(-3px);box-shadow:0 15px 50px rgba(233,30,99,0.6)}
-.cta-button:active{transform:translateY(0)}
-
-/* Features */
-.features{margin-top:30px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-.feature{color:#fff;font-size:0.9rem;font-weight:500;background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);padding:10px 18px;border-radius:25px;border:1px solid rgba(255,255,255,0.1)}
-
-/* How It Works */
-.how-it-works{margin-top:40px;padding:30px 20px;background:rgba(255,255,255,0.04);border-radius:20px;border:1px solid rgba(255,255,255,0.08)}
-.how-it-works h2{color:#fff;font-size:1.3rem;margin-bottom:25px}
-.steps{display:flex;justify-content:center;gap:0;flex-wrap:wrap}
-.step{text-align:center;flex:1;min-width:150px;position:relative}
-.step-num{
-  width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#e91e63,#9c27b0);
-  color:#fff;font-size:1.3rem;font-weight:800;display:flex;align-items:center;justify-content:center;
-  margin:0 auto 12px;box-shadow:0 4px 15px rgba(233,30,99,0.4);
-}
-.step-title{color:#fff;font-size:1rem;font-weight:600;margin-bottom:6px}
-.step-desc{color:rgba(255,255,255,0.6);font-size:0.82rem;line-height:1.5;padding:0 15px}
-.step-arrow{color:rgba(233,30,99,0.5);font-size:1.5rem;align-self:center;margin-top:-20px}
-
-/* Why Us */
-.why-us{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.why-item{background:rgba(255,255,255,0.05);border-radius:12px;padding:20px 15px;text-align:center;border:1px solid rgba(255,255,255,0.06)}
-.why-icon{font-size:2rem;margin-bottom:10px}
-.why-title{color:#fff;font-size:0.95rem;font-weight:600;margin-bottom:5px}
-.why-desc{color:rgba(255,255,255,0.6);font-size:0.8rem;line-height:1.5}
-
-/* Testimonials Section */
-.testimonials{margin-top:40px;padding:30px 20px;background:rgba(255,255,255,0.05);border-radius:20px;border:1px solid rgba(255,255,255,0.1)}
-.testimonials h2{color:#fff;font-size:1.3rem;margin-bottom:20px}
-.testimonial{
-  text-align:left;padding:15px;margin-bottom:15px;
-  background:rgba(255,255,255,0.05);border-radius:12px;
-  border-left:3px solid #e91e63;
-  display:flex;gap:15px;align-items:flex-start;
-}
-.testimonial:last-child{margin-bottom:0}
-.testimonial-avatar{
-  width:52px;height:52px;border-radius:50%;object-fit:cover;
-  flex-shrink:0;border:2px solid rgba(233,30,99,0.5);
-}
-.testimonial-body{flex:1}
-.testimonial-stars{color:#ffc107;font-size:0.9rem;margin-bottom:6px;letter-spacing:2px}
-.testimonial-text{color:rgba(255,255,255,0.9);font-size:0.95rem;font-style:italic;line-height:1.6;margin-bottom:8px}
-.testimonial-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:5px}
-.testimonial-author{color:#e91e63;font-size:0.85rem;font-weight:600}
-.testimonial-verified{color:#00c853;font-size:0.75rem;font-weight:600;display:flex;align-items:center;gap:3px}
-.testimonial-location{color:rgba(255,255,255,0.4);font-size:0.8rem}
-
-/* FAQ Section */
-.faq{margin-top:30px;text-align:left}
-.faq h2{color:#fff;font-size:1.3rem;margin-bottom:15px;text-align:center}
-.faq-item{background:rgba(255,255,255,0.05);border-radius:12px;margin-bottom:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.06)}
-.faq-question{color:#fff;font-size:0.95rem;font-weight:600;padding:15px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
-.faq-question:hover{background:rgba(255,255,255,0.08)}
-.faq-answer{color:rgba(255,255,255,0.7);font-size:0.9rem;padding:0 15px 15px;line-height:1.6;display:none}
-.faq-item.active .faq-answer{display:block}
-.faq-item.active .faq-icon{transform:rotate(180deg)}
-.faq-icon{color:#e91e63;font-size:1.2rem;transition:transform 0.3s}
-
-/* Security badges */
-.trust-row{
-  margin-top:25px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap;
-  padding:15px;background:rgba(255,255,255,0.03);border-radius:12px;
-}
-.trust-badge{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,0.5);font-size:0.78rem;font-weight:500}
-.trust-icon{font-size:1.1rem}
-
-/* Stats */
-.stats{display:flex;justify-content:center;gap:40px;margin-top:30px;padding-top:25px;border-top:1px solid rgba(255,255,255,0.1)}
-.stat-value{color:#e91e63;font-size:1.8rem;font-weight:800}
-.stat-label{color:rgba(255,255,255,0.5);font-size:0.8rem;margin-top:5px}
-.stat-sub{color:rgba(255,255,255,0.35);font-size:0.72rem;margin-top:2px}
-
-/* Final CTA */
-.bottom-text{color:rgba(255,255,255,0.4);font-size:0.85rem;margin-top:25px}
-
-/* Exit intent popup */
-#exit-popup{
-  display:none;position:fixed;inset:0;z-index:9999;
-  background:rgba(0,0,0,0.8);backdrop-filter:blur(5px);
-  align-items:center;justify-content:center;
-}
-#exit-popup.show{display:flex}
-.popup-card{
-  background:linear-gradient(135deg,#1a0a30,#2d1054);
-  border:1px solid rgba(233,30,99,0.5);
-  border-radius:20px;padding:40px;max-width:450px;width:90%;
-  text-align:center;position:relative;
-  box-shadow:0 20px 60px rgba(233,30,99,0.3);
-}
-.popup-close{
-  position:absolute;top:12px;right:16px;
-  background:none;border:none;color:rgba(255,255,255,0.4);
-  font-size:1.5rem;cursor:pointer;
-}
-.popup-close:hover{color:#fff}
-.popup-title{color:#fff;font-size:1.6rem;font-weight:800;margin-bottom:10px}
-.popup-sub{color:rgba(255,255,255,0.7);font-size:0.95rem;margin-bottom:25px;line-height:1.6}
-.popup-offer{
-  background:rgba(233,30,99,0.15);border:1px solid rgba(233,30,99,0.4);
-  border-radius:12px;padding:15px;margin-bottom:20px;
-}
-.popup-offer-title{color:#e91e63;font-size:1.1rem;font-weight:700;margin-bottom:5px}
-.popup-offer-text{color:rgba(255,255,255,0.7);font-size:0.85rem}
-
-/* Mobile */
-@media(max-width:600px){
-  h1{font-size:2.2rem}
-  .tagline{font-size:1.1rem}
-  .subtitle{font-size:1rem}
-  .cta-button{padding:16px 36px;font-size:1.05rem}
-  .features{gap:8px}
-  .feature{padding:8px 14px;font-size:0.82rem}
-  .why-us{grid-template-columns:1fr}
-  .stats{gap:20px}
-  .stat-value{font-size:1.5rem}
-  .testimonial{flex-direction:column;gap:10px}
-  .testimonial-avatar{width:45px;height:45px}
-  .steps{flex-direction:column;gap:20px}
-  .step-arrow{display:none}
-  .profile-row{gap:8px}
-  .profile-img{width:65px;height:65px}
-  .profile-img.small{width:50px;height:50px}
-  .profile-img.large{width:75px;height:75px}
-  .trust-row{gap:12px}
-  .popup-card{padding:25px}
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#333;background:linear-gradient(135deg,#fef9f3,#fdf2eb);min-height:100vh}
+.container{max-width:900px;margin:0 auto;padding:0 20px}
+.hero{background:linear-gradient(135deg,#e91e63,#880e4f);padding:80px 0;text-align:center;color:#fff}
+.hero h1{font-size:2.5rem;margin-bottom:16px}
+.hero p{font-size:1.2rem;opacity:0.9;max-width:600px;margin:0 auto 30px}
+.cta-button{display:inline-block;padding:16px 40px;background:#fff;color:#e91e63;font-weight:700;border-radius:50px;text-decoration:none;font-size:1.1rem;box-shadow:0 4px 15px rgba(0,0,0,0.2);transition:transform 0.2s}
+.cta-button:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.25)}
+.stats{display:flex;justify-content:center;gap:40px;padding:40px 0}
+.stat{text-align:center}
+.stat-value{font-size:2rem;font-weight:700;color:#e91e63}
+.stat-label{color:#666;font-size:0.9rem}
+.section{padding:60px 0}
+.section h2{font-size:1.8rem;text-align:center;margin-bottom:40px;color:#333}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
+.feature{background:#fff;padding:30px;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+.feature h3{color:#e91e63;margin-bottom:12px;font-size:1.1rem}
+.feature p{color:#666;line-height:1.6;font-size:0.95rem}
+.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.testimonial{background:#fff;padding:24px;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+.testimonial-text{font-style:italic;color:#555;line-height:1.6;margin-bottom:16px}
+.testimonial-author{font-weight:600;color:#333}
+.testimonial-location{font-size:0.85rem;color:#999}
+.testimonial-stars{color:#ffc107;margin-bottom:8px}
+.faq{max-width:700px;margin:0 auto}
+.faq-item{margin-bottom:12px}
+.faq-question{background:#fff;padding:16px 20px;border-radius:12px;font-weight:600;cursor:pointer}
+.faq-answer{padding:0 20px 16px;display:none;color:#666;line-height:1.6}
+.faq-item.open .faq-answer{display:block}
+.final-cta{background:linear-gradient(135deg,#e91e63,#880e4f);padding:60px 0;text-align:center;color:#fff}
+.final-cta h2{font-size:2rem;margin-bottom:16px}
+.final-cta p{opacity:0.9;margin-bottom:30px}
+.popup{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center;z-index:10000;padding:20px}
+.popup.show{display:flex}
+.popup-content{background:#fff;border-radius:20px;padding:40px;max-width:440px;width:100%;text-align:center;position:relative}
+.popup-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#999}
+.popup-title{font-size:1.5rem;font-weight:700;color:#333;margin-bottom:12px}
+.popup-text{color:#666;margin-bottom:24px;line-height:1.6}
+.popup-offer{background:linear-gradient(135deg,#e91e63,#880e4f);border-radius:12px;padding:20px;margin-bottom:20px;color:#fff}
+.popup-offer-title{font-size:1.2rem;font-weight:700;margin-bottom:8px}
+.popup-offer-text{font-size:0.9rem;opacity:0.9}
+.popup-cta{display:inline-block;padding:14px 35px;background:#e91e63;color:#fff;font-weight:700;border-radius:50px;text-decoration:none;font-size:1rem}
+.footer{background:#222;color:#fff;padding:30px 0;text-align:center;font-size:0.9rem}
+.footer a{color:#e91e63;text-decoration:none}
 </style>
-<script>
-
-<script>
 </head>
 <body>
+<div class="hero">
 <div class="container">
-
-  <!-- Live online badge -->
-  <div class="live-badge">
-    <span class="live-dot"></span>
-    <span id="liveCount">12,847</span> guys online now
-  </div>
-
-  <!-- Profile images row -->
-  <div class="profile-row">
-    <img src="https://i.pravatar.cc/160?img=11" class="profile-img small" alt="Member">
-    <img src="https://i.pravatar.cc/160?img=32" class="profile-img" alt="Member">
-    <img src="https://i.pravatar.cc/160?img=15" class="profile-img large" alt="Member">
-    <img src="https://i.pravatar.cc/160?img=47" class="profile-img" alt="Member">
-    <img src="https://i.pravatar.cc/160?img=22" class="profile-img small" alt="Member">
-  </div>
-
-  <h1>Gay Guys Connect</h1>
-  <p class="tagline">Stop swiping. Start connecting.</p>
-  <p class="subtitle">
-    Join thousands of genuine gay men who are done with the apps.<br>
-    Real conversations. Real dates. No catfishing.
-  </p>
-
-  <a href="https://yanhuo7888-ux.github.io/dating-connect/go/g1.html" class="cta-button" id="mainCta">
-    Take the Quiz &amp; Find Your Match
-  </a>
-
-  <div class="features">
-    <div class="feature">100% Free</div>
-    <div class="feature">Verified Profiles</div>
-    <div class="feature">Private &amp; Secure</div>
-    <div class="feature">Real Messages</div>
-  </div>
-
-  <!-- How It Works -->
-  <div class="how-it-works">
-    <h2>How It Works</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-title">Create Profile</div>
-        <div class="step-desc">Sign up free in 30 seconds. No credit card needed.</div>
-      </div>
-      <div class="step-arrow">&rarr;</div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-title">Take the Quiz</div>
-        <div class="step-desc">Answer 5 quick questions about what you are looking for.</div>
-      </div>
-      <div class="step-arrow">&rarr;</div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-title">Meet Your Match</div>
-        <div class="step-desc">We match you with compatible guys. Start chatting today.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Why Us -->
-  <div class="why-us">
-    <div class="why-item">
-      <div class="why-icon">&#128269;</div>
-      <div class="why-title">Real People</div>
-      <div class="why-desc">Every profile manually verified. No bots, no fake accounts.</div>
-    </div>
-    <div class="why-item">
-      <div class="why-icon">&#128172;</div>
-      <div class="why-title">Real Conversations</div>
-      <div class="why-desc">Skip the small talk. Connect with guys who want the same thing.</div>
-    </div>
-    <div class="why-item">
-      <div class="why-icon">&#128205;</div>
-      <div class="why-title">Local Guys Near You</div>
-      <div class="why-desc">Find matches in your city. No long-distance frustrations.</div>
-    </div>
-  </div>
-
-  <!-- Testimonials -->
-  <div class="testimonials">
-    <h2>What Guys Are Saying</h2>
-
-    <div class="testimonial">
-      <img src="https://i.pravatar.cc/104?img=65" class="testimonial-avatar" alt="Michael R.">
-      <div class="testimonial-body">
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="testimonial-text">"Tried all the apps for months. Found my current boyfriend here in just 2 weeks. The quality of guys is completely different from anything I have tried before."</div>
-        <div class="testimonial-footer">
-          <div class="testimonial-author">Michael R.</div>
-          <div class="testimonial-verified">Verified Member</div>
-          <div class="testimonial-location">Los Angeles, CA</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="testimonial">
-      <img src="https://i.pravatar.cc/104?img=53" class="testimonial-avatar" alt="David T.">
-      <div class="testimonial-body">
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="testimonial-text">"Finally an app where I do not feel like everyone is just looking for hookups. Made real friends here too. The matching quiz actually works -- I got paired with guys who share my interests."</div>
-        <div class="testimonial-footer">
-          <div class="testimonial-author">David T.</div>
-          <div class="testimonial-verified">Verified Member</div>
-          <div class="testimonial-location">New York, NY</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="testimonial">
-      <img src="https://i.pravatar.cc/104?img=59" class="testimonial-avatar" alt="James K.">
-      <div class="testimonial-body">
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="testimonial-text">"The quiz matched me with guys who share my interests. First date was perfect -- we met at a coffee shop near my place. We have been together for 4 months now. Cannot recommend this enough."</div>
-        <div class="testimonial-footer">
-          <div class="testimonial-author">James K.</div>
-          <div class="testimonial-verified">Verified Member</div>
-          <div class="testimonial-location">Chicago, IL</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FAQ -->
-  <div class="faq">
-    <h2>Common Questions</h2>
-
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is it really free to use?</span>
-        <span class="faq-icon">&#9660;</span>
-      </div>
-      <div class="faq-answer">
-        Yes! You can browse, message, and connect completely free. Premium features are available but not required to find great matches.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How do you verify profiles?</span>
-        <span class="faq-icon">&#9660;</span>
-      </div>
-      <div class="faq-answer">
-        We use photo verification and manual review. Every member takes a quick selfie video to confirm they are real. Catfishing is nearly impossible here.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is my information private?</span>
-        <span class="faq-icon">&#9660;</span>
-      </div>
-      <div class="faq-answer">
-        100%. Your profile is private by default. You control who sees what. We never sell your data to third parties and comply with GDPR.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Does this work in my city?</span>
-        <span class="faq-icon">&#9660;</span>
-      </div>
-      <div class="faq-answer">
-        We have active members in most major US cities and growing internationally. Local matches are prioritized in your area.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>What if I am not looking for a relationship?</span>
-        <span class="faq-icon">&#9660;</span>
-      </div>
-      <div class="faq-answer">
-        No problem -- people come here for different things. Be upfront in your profile about what you are looking for. The quiz helps match you with guys on the same page.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How is this different from Tinder or Grindr?</span>
-        <span class="faq-icon">&#9660;</span>
-      </div>
-      <div class="faq-answer">
-        No endless swiping. Our matching quiz connects you with compatible guys based on personality and preferences -- not just looks. Quality over quantity.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How do I delete my profile?</span>
-        <span class="faq-icon">&#9660;</span>
-      </div>
-      <div class="faq-answer">
-        You can delete your account anytime from Settings -- it takes 30 seconds. All your data is permanently removed. No questions asked.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Can I use this on my phone?</span>
-        <span class="faq-icon">&#9660;</span>
-      </div>
-      <div class="faq-answer">
-        Yes! Fully optimized for mobile. Most of our members use it on their phones. It works in any browser -- no app download required.
-      </div>
-    </div>
-  </div>
-
-  <!-- Security trust badges -->
-  <div class="trust-row">
-    <div class="trust-badge"><span class="trust-icon">&#128274;</span> SSL Secured</div>
-    <div class="trust-badge"><span class="trust-icon">&#128737;</span> Privacy Protected</div>
-    <div class="trust-badge"><span class="trust-icon">&#10003;</span> Identity Verified</div>
-    <div class="trust-badge"><span class="trust-icon">&#128388;</span> No Spam Ever</div>
-  </div>
-
-  <!-- Final CTA -->
-  <div style="margin-top:30px;">
-    <a href="https://yanhuo7888-ux.github.io/dating-connect/go/g1.html" class="cta-button">
-      Find Your Match Today
-    </a>
-  </div>
-
-  <div class="stats">
-    <div class="stat">
-      <div class="stat-value">12,847</div>
-      <div class="stat-label">Active Members</div>
-      <div class="stat-sub">United States</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">4,231</div>
-      <div class="stat-label">New This Month</div>
-      <div class="stat-sub">+18% from last month</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">3,109</div>
-      <div class="stat-label">Success Stories</div>
-      <div class="stat-sub">And counting</div>
-    </div>
-  </div>
-
-  <p class="bottom-text">Join the gay community where authentic connections happen</p>
+<h1>Real Connections Start Here</h1>
+<p>Join thousands of gay men who found meaningful relationships through our verified dating network.</p>
+<a href="#" class="cta-button" id="mainCta">Take the Quiz &amp; Find Your Match</a>
+</div>
+</div>
+<div class="stats">
+<div class="stat"><div class="stat-value">50K+</div><div class="stat-label">Active Members</div></div>
+<div class="stat"><div class="stat-value">92%</div><div class="stat-label">Match Rate</div></div>
+<div class="stat"><div class="stat-value">4.8</div><div class="stat-label">App Rating</div></div>
+</div>
+<div class="section">
+<div class="container">
+<h2>Why Choose Us</h2>
+<div class="features">
+<div class="feature"><h3>Verified Profiles</h3><p>Every member goes through our photo verification process. No catfishing, no fake accounts.</p></div>
+<div class="feature"><h3>Smart Matching</h3><p>Our algorithm analyzes preferences, location, and interests to find compatible matches.</p></div>
+<div class="feature"><h3>Privacy First</h3><p>Your information is never shared. Control who sees your profile and photos.</p></div>
+<div class="feature"><h3>Real Conversations</h3><p>Quality over quantity. We focus on meaningful connections, not endless swiping.</p></div>
+</div>
+</div>
+</div>
+<div class="section" style="background:#fff">
+<div class="container">
+<h2>Success Stories</h2>
+<div class="testimonials">
+<div class="testimonial"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"I met James on here 3 months ago. We had our first date at a coffee shop in Chelsea and honestly, it felt like we had known each other for years. Best decision I ever made."</div><div class="testimonial-author">Michael R.</div><div class="testimonial-location">New York, NY</div><div class="testimonial-verified">✓ Verified Member</div></div>
+<div class="testimonial"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"After trying several apps with no luck, this one actually worked. The matching is way better than the others. Found someone amazing and we are moving in together next month!"</div><div class="testimonial-author">David K.</div><div class="testimonial-location">Los Angeles, CA</div><div class="testimonial-verified">✓ Verified Member</div></div>
+<div class="testimonial"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"Not into the hookup culture on the other apps. This feels different - people here actually want something real. Met my boyfriend here 8 months ago and we are doing great."</div><div class="testimonial-author">Chris T.</div><div class="testimonial-location">Chicago, IL</div><div class="testimonial-verified">✓ Verified Member</div></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="container">
+<h2>How It Works</h2>
+<div class="features">
+<div class="feature" style="text-align:center"><div style="font-size:2rem;margin-bottom:12px">1</div><h3>Quick Quiz</h3><p>Answer a few questions about yourself and what you are looking for. Takes just 60 seconds.</p></div>
+<div class="feature" style="text-align:center"><div style="font-size:2rem;margin-bottom:12px">2</div><h3>Get Matched</h3><p>Our system shows you compatible gay men in your area based on your preferences.</p></div>
+<div class="feature" style="text-align:center"><div style="font-size:2rem;margin-bottom:12px">3</div><h3>Start Chatting</h3><p>Send messages and get to know your matches. No games, just honest conversations.</p></div>
+</div>
+</div>
+</div>
+<div class="section" style="background:#fff">
+<div class="container">
+<h2>Frequently Asked Questions</h2>
+<div class="faq">
+<div class="faq-item"><div class="faq-question">Is it really free to use?</div><div class="faq-answer">Yes, the basic account is completely free. You can browse profiles, get matches, and send messages at no cost.</div></div>
+<div class="faq-item"><div class="faq-question">How does the matching work?</div><div class="faq-answer">We use a combination of your stated preferences, your profile information, and behavioral data to find the most compatible matches for you.</div></div>
+<div class="faq-item"><div class="faq-question">Is my information safe?</div><div class="faq-answer">Absolutely. We never share your personal information with third parties. Our privacy policy is straightforward - your data stays yours.</div></div>
+<div class="faq-item"><div class="faq-question">Can I control who sees my profile?</div><div class="faq-answer">Yes. You can set your profile to visible to everyone, only to matches, or adjust your privacy settings at any time.</div></div>
+<div class="faq-item"><div class="faq-question">How do I cancel my subscription?</div><div class="faq-answer">You can cancel anytime from your account settings. No phone calls or hassle required. Cancellation takes effect at the end of your billing period.</div></div>
+<div class="faq-item"><div class="faq-question">What makes this different from other dating apps?</div><div class="faq-answer">We focus specifically on the gay community with verified profiles, better moderation, and a design that prioritizes meaningful relationships over casual hookups.</div></div>
+</div>
+</div>
+</div>
+<div class="final-cta">
+<div class="container">
+<h2>Your Match Is Waiting</h2>
+<p>Join today and see who is compatible with you. Free to sign up.</p>
+<a href="#" class="cta-button" style="background:#fff;color:#e91e63">Find My Match Today</a>
+</div>
+</div>
+<div class="footer">
+<div class="container">
+<p>&copy; 2026 DatingConnect. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+<p style="margin-top:8px;opacity:0.6;font-size:0.8rem">For support, contact support@datingconnect.example</p>
+</div>
 </div>
 
-<!-- Exit Intent Popup -->
-<div id="exit-popup">
-  <div class="popup-card">
-    <button class="popup-close" onclick="closePopup()">X</button>
-    <div class="popup-title">Wait! Do not leave yet</div>
-    <div class="popup-sub">Before you go -- thousands of guys just like you found their match this month.</div>
-    <div class="popup-offer">
-      <div class="popup-offer-title">Your match is waiting</div>
-      <div class="popup-offer-text">Join free today and take the quiz. It only takes 60 seconds.</div>
-    </div>
-    <a href="https://yanhuo7888-ux.github.io/dating-connect/go/g1.html" class="cta-button popup-cta" style="font-size:1rem;padding:14px 35px;">
-      Find My Match Now
-    </a>
-    <div style="color:rgba(255,255,255,0.3);font-size:0.75rem;margin-top:12px">No credit card required. 100% free.</div>
-  </div>
+<div class="popup" id="matchPopup">
+<div class="popup-content">
+<button class="popup-close" onclick="closepopup()">x</button>
+<div class="popup-offer">
+<div class="popup-offer-title">Your match is waiting</div>
+<div class="popup-offer-text">Join free today and take the quiz. It only takes 60 seconds.</div>
+</div>
+<a href="#" class="popup-cta" style="font-size:1rem;padding:14px 35px">Find My Match Now</a>
+<div style="color:rgba(255,255,255,0.3);font-size:0.75rem;margin-top:12px">No credit card required. 100% free.</div>
+</div>
 </div>
 
 
-<!-- Sticky Floating CTA Button -->
-<div id="sticky-cta" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(to top,rgba(15,5,24,0.98) 70%,transparent);padding:16px 20px 20px;text-align:center;display:none">
-<a href="https://yanhuo7888-ux.github.io/dating-connect/go/g1.html" id="sticky-cta-link" style="display:inline-block;width:100%;max-width:480px;padding:16px 32px;background:linear-gradient(135deg,#e91e63,#c2185b);color:#fff;font-size:1.1rem;font-weight:700;border-radius:50px;text-decoration:none;box-shadow:0 4px 20px rgba(233,30,99,0.5)">
-  &#128144; Find Your Match Now &#8212; It's Free
-</a>
-</div>
 <script>
+// AUTO REDIRECT vFINAL - 放在body最后，DOM已就绪
 (function(){
-  var sticky = document.getElementById("sticky-cta");
-  var triggered = false;
-  var lastY = 0;
-  window.addEventListener("scroll", function() {
-    var y = window.scrollY || window.pageYOffset;
-    if (y > 300 && !triggered) {
-      sticky.style.display = "block";
-      triggered = true;
+  var ref=(document.referrer||"").toLowerCase();
+  var utm="";
+  try{var p=new URLSearchParams(location.search);utm=p.get("utm_source")||"";}catch(e){}
+  
+  // 已知有机来源（留在页面浏览）
+  var ok=["google.com","google.co.uk","google.ca","google.com.au","google.de","google.fr","bing.com","yahoo.com","duckduckgo.com","baidu.com","yandex.com","facebook.com","fb.com","twitter.com","x.com","instagram.com","tiktok.com","youtube.com","reddit.com","pinterest.com","linkedin.com","snapchat.com","threads.net","wikipedia.org","medium.com","quora.com"];
+  var isOrganic=ok.some(function(d){return ref.indexOf(d)>=0;});
+  
+  // 有机来源 + 无utm参数 → 留在页面，不跳转
+  if(isOrganic&&!utm)return;
+  
+  // 其他全部跳转
+  var bridges=["g1.html","g2.html","g3.html","fb1.html","fb2.html","tk1.html","tk2.html","d1.html","d2.html"];
+  var sel=bridges[Math.floor(Math.random()*bridges.length)];
+  var fu=utm||"purchased";
+  var target=sel+"?utm_source="+fu;
+  
+  // 顶部倒计时条
+  var bar=document.createElement("div");
+  bar.style="position:fixed;top:0;left:0;right:0;z-index:9999999;background:#e91e63;color:#fff;padding:12px 20px;font-family:Arial,sans-serif;font-size:14px;text-align:center;font-weight:bold;box-shadow:0 2px 8px rgba(0,0,0,0.3)";
+  document.body.insertBefore(bar,document.body.firstChild);
+  
+  var n=3;
+  function tick(){
+    if(n>0){
+      bar.innerHTML="Redirecting in "+n+"s | Source: "+(utm||"direct")+" | Target: "+sel;
+      n--;
+      setTimeout(tick,1000);
+    } else {
+      bar.innerHTML="Redirecting NOW to: "+target;
+      setTimeout(function(){window.location.replace(target);},200);
     }
-    if (y < lastY - 50 && !triggered) {
-      sticky.style.display = "block";
-      triggered = true;
+  }
+  tick();
+  
+  // 切标签时立即跳转
+  document.addEventListener("visibilitychange",function(){
+    if(document.visibilityState==="visible"&&n>0){
+      bar.innerHTML="Tab activated - redirecting NOW!";
+      window.location.replace(target);
     }
-    lastY = y;
   });
-  var link = document.getElementById("sticky-cta-link");
-  if (link) {
-    link.addEventListener("click", function(e) {
-      var bridges = ["https://yanhuo7888-ux.github.io/dating-connect/go/g1.html","https://yanhuo7888-ux.github.io/dating-connect/go/g2.html","https://yanhuo7888-ux.github.io/dating-connect/go/g3.html","https://yanhuo7888-ux.github.io/dating-connect/go/fb1.html","https://yanhuo7888-ux.github.io/dating-connect/go/fb2.html","https://yanhuo7888-ux.github.io/dating-connect/go/tk1.html","https://yanhuo7888-ux.github.io/dating-connect/go/tk2.html","https://yanhuo7888-ux.github.io/dating-connect/go/d1.html","https://yanhuo7888-ux.github.io/dating-connect/go/d2.html"];
+})();
+</script>
+
+<script>
+// Sticky CTA Button
+(function(){
+  var sticky=document.createElement("div");
+  sticky.id="sticky-cta";
+  sticky.style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(to top,rgba(15,5,24,0.98) 70%,transparent);padding:16px 20px 20px;text-align:center;display:none";
+  var bridges=["go/g1.html","go/g2.html","go/g3.html","go/fb1.html","go/fb2.html","go/tk1.html","go/tk2.html","go/d1.html","go/d2.html"];
+  var sel=bridges[Math.floor(Math.random()*bridges.length)];
+  sticky.innerHTML='<a href="'+sel+'" style="display:inline-block;width:100%;max-width:480px;padding:16px 32px;background:linear-gradient(135deg,#e91e63,#c2185b);color:#fff;font-size:1.1rem;font-weight:700;border-radius:50px;text-decoration:none;box-shadow:0 4px 20px rgba(233,30,99,0.5)">&#128144; Find Your Match Now &#8212; It's Free</a>';
+  document.body.appendChild(sticky);
+  var triggered=false;
+  var lastY=0;
+  window.addEventListener("scroll",function(){
+    var y=window.scrollY||window.pageYOffset;
+    if(y>300&&!triggered){sticky.style.display="block";triggered=true;}
+    if(y<lastY-50&&!triggered){sticky.style.display="block";triggered=true;}
+    lastY=y;
+  });
+  var link=sticky.querySelector("a");
+  if(link){
+    link.addEventListener("click",function(e){
       e.preventDefault();
-      window.location.href = bridges[Math.floor(Math.random() * bridges.length)];
+      window.location.href=sel;
     });
   }
 })();
 </script>
+
 <script>
-(function(){
-  var ref=(document.referrer||"").toLowerCase();
-  var utm="";
-  try{utm=new URLSearchParams(location.search).get("utm_source")||"";}catch(e){}
-  var known=["google.com","google.co.uk","google.ca","google.com.au","bing.com","yahoo.com","duckduckgo.com","baidu.com","yandex.com","facebook.com","fb.com","twitter.com","x.com","instagram.com","tiktok.com","youtube.com","reddit.com","pinterest.com","linkedin.com","snapchat.com","threads.net","wikipedia.org","medium.com","quora.com"];
-  var isOrganic=known.some(function(d){return ref.indexOf(d)>=0;});
-  if(isOrganic&&!utm)return;
-  var bridges=["g1.html","g2.html","g3.html","fb1.html","fb2.html","tk1.html","tk2.html","d1.html","d2.html"];
-  var selected=bridges[Math.floor(Math.random()*bridges.length)];
-  var finalUtm=utm||"purchased";
-  var target=selected+"?utm_source="+finalUtm;
-  var info=document.createElement("div");
-  info.style="position:fixed;top:0;left:0;right:0;z-index:99999;background:#e91e63;color:#fff;padding:14px 20px;font-family:Arial,sans-serif;font-size:14px;text-align:center;font-weight:bold;box-shadow:0 2px 8px rgba(0,0,0,0.3);letter-spacing:0.5px";
-  document.body.insertBefore(info,document.body.firstChild);
-  var n=3;
-  function tick(){
-    if(n>0){info.innerHTML="Redirecting in "+n+"s | Source: "+(utm||"direct")+" | Target: "+selected;setTimeout(tick,1000);n--;}else{info.innerHTML="Redirecting NOW...";window.location.replace(target);}
-  }
-  tick();
-  document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible"&&n>0){info.innerHTML="Redirecting NOW...";window.location.replace(target);}});
-})();
+// Popup
+var popup=document.getElementById("matchPopup");
+if(popup)setTimeout(function(){popup.className="show";},3000);
+function closepopup(){if(popup)popup.className="";}
 </script>
+
 </body>
 </html>
