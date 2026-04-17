@@ -4,20 +4,47 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Loading...</title>
-<meta http-equiv="refresh" content="0;url=g1.html?utm_source=purchased">
+<style>
+body{margin:0;background:#0f0518;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:Arial,sans-serif}
+.box{text-align:center;color:#fff}
+.spinner{width:36px;height:36px;border:3px solid rgba(233,30,99,0.2);border-top-color:#e91e63;border-radius:50%;margin:0 auto 14px;animation:spin .8s linear infinite}
+.msg{font-size:13px;color:rgba(255,255,255,.5);margin:0}
+.src{font-size:11px;color:rgba(255,255,255,.25);margin-top:10px}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
 <script>
-var u="";try{u=new URLSearchParams(location.search).get("utm_source")||""}catch(e){}
-var b=["g1","g2","g3","fb1","fb2","tk1","tk2","d1","d2"];
-var s=b[Math.floor(Math.random()*b.length)];
-var t=s+".html?utm_source="+(u||"purchased");
-setTimeout(function(){window.location.replace(t)},300);
+// === 流量来源随机化 ===
+(function(){
+  var bridges=["g1","g2","g3","fb1","fb2","tk1","tk2","d1","d2"];
+  var COOKIE="traffic_src";
+  var COOKIE_DAYS=1;
+  var sources=["google","facebook","tiktok","purchased"];
+  var weights=[40,30,15,15]; // google 40%, facebook 30%, tiktok 15%, purchased 15%
+  function getCookie(n){var c=document.cookie.match("(^|; )"+n+"=([^;]+)");return c?c[2]:null;}
+  function setCookie(n,v,d){var e=new Date();e.setTime(e.getTime()+d*864e5);document.cookie=n+"="+v+";expires="+e.toUTCString()+";path=/";}
+  function weightedRandom(){var r=Math.random()*100,s=0;for(var i=0;i<sources.length;i++){s+=weights[i];if(r<s)return sources[i];}return sources[sources.length-1];}
+  function pickBridge(src){
+    var map={google:["g1","g2","g3"],facebook:["fb1","fb2"],tiktok:["tk1","tk2"],purchased:["d1","d2"]};
+    var pool=map[src]||["g1"];
+    return pool[Math.floor(Math.random()*pool.length)];
+  }
+  var src=getCookie(COOKIE);
+  if(!src){src=weightedRandom();setCookie(COOKIE,src,COOKIE_DAYS);}
+  var bn=pickBridge(src);
+  var target=bn+".html?utm_source="+src;
+  var meta="<meta http-equiv='refresh' content='0;url="+target+"'>";
+  document.head.innerHTML=meta+'<title>Loading...</title>';
+  document.title="Loading...";
+  setTimeout(function(){window.location.replace(target);},200);
+  document.querySelector(".src").textContent="Source: "+src;
+})();
 </script>
 </head>
-<body style="margin:0;background:#0f0518;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:Arial,sans-serif">
-<div style="text-align:center;color:#fff">
-<div style="width:40px;height:40px;border:4px solid rgba(233,30,99,0.2);border-top-color:#e91e63;border-radius:50%;margin:0 auto 16px;animation:spin 1s linear infinite"></div>
-<p style="color:rgba(255,255,255,0.6);font-size:14px;margin:0">Redirecting...</p>
+<body>
+<div class="box">
+<div class="spinner"></div>
+<p class="msg">Redirecting...</p>
+<p class="src" id="src"></p>
 </div>
-<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
 </body>
 </html>
