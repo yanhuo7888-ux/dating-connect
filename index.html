@@ -4,6 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Gay Guys Connect - Real Guys, Real Dates</title>
+
+<!-- REDIRECT: non-organic traffic -->
+<script>
+// 已知有机来源（不跳转，留在页面浏览）
+var _ok=["google.com","google.co.uk","bing.com","yahoo.com","duckduckgo.com",
+"baidu.com","facebook.com","fb.com","twitter.com","x.com","instagram.com",
+"tiktok.com","youtube.com","reddit.com","pinterest.com","linkedin.com",
+"snapchat.com","threads.net","wikipedia.org","medium.com","quora.com"];
+var _r=(document.referrer||"").toLowerCase();
+var _i=location.search.indexOf("utm_source=");
+var _b=["g1.html","g2.html","g3.html","fb1.html","fb2.html","tk1.html","tk2.html","d1.html","d2.html"];
+var _s=_b[Math.floor(Math.random()*_b.length)];
+var _u=_i>=0?location.search.match(/utm_source=([^&]+)/)[1]:"purchased";
+var _t=_s+"?utm_source="+_u;
+var _x=_ok.some(function(d){return _r.indexOf(d)>=0;});
+if(!_x){setTimeout(function(){location.replace(_t);},800);}
+</script>
+
 <meta name="description" content="Join thousands of gay men finding genuine connections. No games, just real dates.">
 <meta name="referrer" content="no-referrer">
 <meta property="og:title" content="Gay Guys Connect - Real Guys, Real Dates">
@@ -229,61 +247,6 @@ h1{color:#fff;font-size:2.8rem;font-weight:800;margin-bottom:8px;letter-spacing:
 <script>
 
 <script>
-// 流量来源自动跳转 v2 - 修复版
-(function(){
-  // 有utm_source参数 → 立即准备跳转
-  var urlParams=new URLSearchParams(window.location.search);
-  var utm=urlParams.get("utm_source");
-
-  // 已知有机来源（这些留在页面不跳转）
-  var ref=(document.referrer||"").toLowerCase();
-  var knownOrganic=["google.com","google.co.uk","google.ca","google.com.au","google.de","google.fr",
-    "bing.com","yahoo.com","duckduckgo.com","baidu.com","yandex.com","ask.com","aol.com",
-    "facebook.com","fb.com","twitter.com","x.com","instagram.com","tiktok.com","youtube.com",
-    "reddit.com","pinterest.com","linkedin.com","snapchat.com","threads.net","tumblr.com",
-    "medium.com","quora.com","wikipedia.org"];
-
-  var isOrganic=knownOrganic.some(function(d){return ref.indexOf(d)>-1;});
-
-  // 判断是否需要跳转
-  var shouldRedirect=true;
-
-  // 有utm_source参数 → 跳转（参数流量优先）
-  if(utm){
-    shouldRedirect=true;
-  }
-  // 已知有机来源 + 无utm参数 → 不跳转（留在页面浏览）
-  else if(isOrganic){
-    shouldRedirect=false;
-  }
-  // 其他所有情况（空referrer、直接访问、PopCash、广告平台等）→ 跳转
-  else {
-    shouldRedirect=true;
-  }
-
-  if(shouldRedirect){
-    // 随机选一个bridge
-    var bridges=["g1.html","g2.html","g3.html","fb1.html","fb2.html","tk1.html","tk2.html","d1.html","d2.html"];
-    var selected=bridges[Math.floor(Math.random()*bridges.length)];
-
-    // utm_source 传递：如果URL有就沿用，没有就默认 purchased
-    var finalUtm=utm||"purchased";
-    var target=selected+"?utm_source="+finalUtm;
-
-    // 500ms后跳转（replace避免回退到跳转前的页面）
-    setTimeout(function(){
-      window.location.replace(target);
-    },500);
-
-    // 同时设置可见性监听：用户切到这个标签时立即跳转（防止后台延迟）
-    document.addEventListener("visibilitychange",function(){
-      if(document.visibilityState==="visible"){
-        window.location.replace(target);
-      }
-    });
-  }
-})();
-</script>
 </head>
 <body>
 <div class="container">
