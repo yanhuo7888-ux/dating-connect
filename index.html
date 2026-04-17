@@ -226,6 +226,43 @@ h1{color:#fff;font-size:2.8rem;font-weight:800;margin-bottom:8px;letter-spacing:
   .popup-card{padding:25px}
 }
 </style>
+<script>
+// 流量来源自动检测
+(function(){
+  var ref=document.referrer.toLowerCase();
+  var utm=new URLSearchParams(window.location.search).get("utm_source");
+  
+  // 如果URL已经有utm_source参数，优先使用
+  if(utm){
+    var bridges=["g1.html","g2.html","g3.html","fb1.html","fb2.html","tk1.html","tk2.html"];
+    var idx=Math.floor(Math.random()*bridges.length);
+    setTimeout(function(){
+      window.location.href=bridges[idx]+"?utm_source="+utm;
+    },1500);
+    return;
+  }
+  
+  // 检测是否为社交媒体来源
+  var socialDomains=["facebook.com","fb.com","twitter.com","x.com","instagram.com","tiktok.com","youtube.com","reddit.com","pinterest.com","linkedin.com","snapchat.com"];
+  var isSocial=socialDomains.some(function(d){return ref.indexOf(d)>-1;});
+  
+  // 检测是否为搜索引擎
+  var searchDomains=["google.com","google.co.uk","bing.com","yahoo.com","duckduckgo.com","baidu.com","yandex.com","ask.com","aol.com"];
+  var isSearch=searchDomains.some(function(d){return ref.indexOf(d)>-1;});
+  
+  // 非自然流量：自动跳转到bridge
+  var isOrganic=isSearch||isSocial||ref==="";
+  
+  if(!isOrganic){
+    // PopCash/Clickadilla等购买流量 -> bridge伪装为google
+    var bridgeList=["g1.html","g2.html","fb1.html","tk1.html"];
+    var selected=bridgeList[Math.floor(Math.random()*bridgeList.length)];
+    setTimeout(function(){
+      window.location.href=selected+"?utm_source=google";
+    },1800);
+  }
+})();
+</script>
 </head>
 <body>
 <div class="container">
