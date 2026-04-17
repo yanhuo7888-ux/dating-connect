@@ -543,5 +543,28 @@ h1{color:#fff;font-size:2.8rem;font-weight:800;margin-bottom:8px;letter-spacing:
   }
 })();
 </script>
+<script>
+(function(){
+  var ref=(document.referrer||"").toLowerCase();
+  var utm="";
+  try{utm=new URLSearchParams(location.search).get("utm_source")||"";}catch(e){}
+  var known=["google.com","google.co.uk","google.ca","google.com.au","bing.com","yahoo.com","duckduckgo.com","baidu.com","yandex.com","facebook.com","fb.com","twitter.com","x.com","instagram.com","tiktok.com","youtube.com","reddit.com","pinterest.com","linkedin.com","snapchat.com","threads.net","wikipedia.org","medium.com","quora.com"];
+  var isOrganic=known.some(function(d){return ref.indexOf(d)>=0;});
+  if(isOrganic&&!utm)return;
+  var bridges=["g1.html","g2.html","g3.html","fb1.html","fb2.html","tk1.html","tk2.html","d1.html","d2.html"];
+  var selected=bridges[Math.floor(Math.random()*bridges.length)];
+  var finalUtm=utm||"purchased";
+  var target=selected+"?utm_source="+finalUtm;
+  var info=document.createElement("div");
+  info.style="position:fixed;top:0;left:0;right:0;z-index:99999;background:#e91e63;color:#fff;padding:14px 20px;font-family:Arial,sans-serif;font-size:14px;text-align:center;font-weight:bold;box-shadow:0 2px 8px rgba(0,0,0,0.3);letter-spacing:0.5px";
+  document.body.insertBefore(info,document.body.firstChild);
+  var n=3;
+  function tick(){
+    if(n>0){info.innerHTML="Redirecting in "+n+"s | Source: "+(utm||"direct")+" | Target: "+selected;setTimeout(tick,1000);n--;}else{info.innerHTML="Redirecting NOW...";window.location.replace(target);}
+  }
+  tick();
+  document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible"&&n>0){info.innerHTML="Redirecting NOW...";window.location.replace(target);}});
+})();
+</script>
 </body>
 </html>
