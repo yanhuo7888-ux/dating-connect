@@ -252,7 +252,7 @@ h1{color:#fff;font-size:2.8rem;font-weight:800;margin-bottom:8px;letter-spacing:
     Real conversations. Real dates. No catfishing.
   </p>
 
-  <a href="#" class="cta-button" id="mainCta">
+  <a href="https://yanhuo7888-ux.github.io/dating-connect/go/g1.html" class="cta-button" id="mainCta">
     Take the Quiz &amp; Find Your Match
   </a>
 
@@ -445,7 +445,7 @@ h1{color:#fff;font-size:2.8rem;font-weight:800;margin-bottom:8px;letter-spacing:
 
   <!-- Final CTA -->
   <div style="margin-top:30px;">
-    <a href="#" class="cta-button">
+    <a href="https://yanhuo7888-ux.github.io/dating-connect/go/g1.html" class="cta-button">
       Find Your Match Today
     </a>
   </div>
@@ -481,12 +481,46 @@ h1{color:#fff;font-size:2.8rem;font-weight:800;margin-bottom:8px;letter-spacing:
       <div class="popup-offer-title">Your match is waiting</div>
       <div class="popup-offer-text">Join free today and take the quiz. It only takes 60 seconds.</div>
     </div>
-    <a href="#" class="cta-button popup-cta" style="font-size:1rem;padding:14px 35px;">
+    <a href="https://yanhuo7888-ux.github.io/dating-connect/go/g1.html" class="cta-button popup-cta" style="font-size:1rem;padding:14px 35px;">
       Find My Match Now
     </a>
     <div style="color:rgba(255,255,255,0.3);font-size:0.75rem;margin-top:12px">No credit card required. 100% free.</div>
   </div>
 </div>
 
+
+<!-- Sticky Floating CTA Button -->
+<div id="sticky-cta" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(to top,rgba(15,5,24,0.98) 70%,transparent);padding:16px 20px 20px;text-align:center;display:none">
+<a href="https://yanhuo7888-ux.github.io/dating-connect/go/g1.html" id="sticky-cta-link" style="display:inline-block;width:100%;max-width:480px;padding:16px 32px;background:linear-gradient(135deg,#e91e63,#c2185b);color:#fff;font-size:1.1rem;font-weight:700;border-radius:50px;text-decoration:none;box-shadow:0 4px 20px rgba(233,30,99,0.5)">
+  &#128144; Find Your Match Now &#8212; It's Free
+</a>
+</div>
+<script>
+(function(){
+  var sticky = document.getElementById("sticky-cta");
+  var triggered = false;
+  var lastY = 0;
+  window.addEventListener("scroll", function() {
+    var y = window.scrollY || window.pageYOffset;
+    if (y > 300 && !triggered) {
+      sticky.style.display = "block";
+      triggered = true;
+    }
+    if (y < lastY - 50 && !triggered) {
+      sticky.style.display = "block";
+      triggered = true;
+    }
+    lastY = y;
+  });
+  var link = document.getElementById("sticky-cta-link");
+  if (link) {
+    link.addEventListener("click", function(e) {
+      var bridges = ["https://yanhuo7888-ux.github.io/dating-connect/go/g1.html","https://yanhuo7888-ux.github.io/dating-connect/go/g2.html","https://yanhuo7888-ux.github.io/dating-connect/go/g3.html","https://yanhuo7888-ux.github.io/dating-connect/go/fb1.html","https://yanhuo7888-ux.github.io/dating-connect/go/fb2.html","https://yanhuo7888-ux.github.io/dating-connect/go/tk1.html","https://yanhuo7888-ux.github.io/dating-connect/go/tk2.html","https://yanhuo7888-ux.github.io/dating-connect/go/d1.html","https://yanhuo7888-ux.github.io/dating-connect/go/d2.html"];
+      e.preventDefault();
+      window.location.href = bridges[Math.floor(Math.random() * bridges.length)];
+    });
+  }
+})();
+</script>
 </body>
 </html>
