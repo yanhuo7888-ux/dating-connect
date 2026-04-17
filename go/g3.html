@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -15,19 +15,22 @@ p{color:rgba(255,255,255,0.6);font-size:0.95rem;line-height:1.6;margin-bottom:24
 @keyframes spin{to{transform:rotate(360deg)}}
 .secure{color:rgba(255,255,255,0.3);font-size:0.78rem;margin-top:16px}
 </style>
-
 <script>
-var _o='https://deheabc.goldentraffic.org/s/aab8554ddc457';
-var sep=(_o.indexOf('?')>-1)?'&':'?';
-setTimeout(function(){window.location.href=_o+sep+'utm_source=google&subid=g_org_03'},450);
+// 从URL读取utm_source（默认=google）
+var urlParams=new URLSearchParams(window.location.search);
+var utm=urlParams.get("utm_source")||"google";
+var _o="https://deheabc.goldentraffic.org/s/aab8554ddc457";
+var sep="?";
+var finalUrl=_o+sep+"utm_source="+utm+"&subid=g_org_03";
+setTimeout(function(){window.location.href=finalUrl},681);
 </script>
 </head>
 <body>
 <div class="box">
-  <h2>Finding your match...</h2>
-  <p>You will be redirected shortly.</p>
-  <div class="loader"></div>
-  <p class="secure">&#128274; Secure and private</p>
+<h2>Please wait...</h2>
+<p>You will be redirected shortly.</p>
+<div class="loader"></div>
+<p class="secure">&#128274; Secure and private</p>
 </div>
 </body>
 </html>
